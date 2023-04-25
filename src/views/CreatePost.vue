@@ -58,7 +58,7 @@
         error: null,
         errorMsg: null,
         loading: null,
-        editorSettings: {
+        editorSettings: { 
           modules: {
             imageResize: {},
           },
