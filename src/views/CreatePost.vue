@@ -20,6 +20,12 @@
         <div class="org-info">
           <input type="text" placeholder="Enter Organization Name" v-model="orgTitle" />
         </div>
+        <div class="org-date">
+          <input type="text" placeholder="Enter Campaign End Date" v-model="endDate" />
+        </div>
+        <div class="org-inf">
+          <h5>( dd / mm / yyyy )</h5>
+        </div>
         <div class="editor">
           <vue-editor :editorOptions="editorSettings" v-model="campHTML" useCustomImageHandler @image-added="imageHandler" />
         </div>
@@ -118,6 +124,7 @@
                   campCoverPhotoName: this.campCoverPhotoName,
                   campTitle: this.campTitle,
                   orgTitle: this.orgTitle,
+                  endDate: this.endDate,
                   profileId: this.profileId,
                   date: timestamp,
                 });
@@ -156,6 +163,14 @@
         },
         set(payload) {
           this.$store.commit("updateCampTitle", payload);
+        },
+      },
+      endDate: {
+        get() {
+          return this.$store.state.endDate;
+        },
+        set(payload) {
+          this.$store.commit("updateEndDate", payload);
         },
       },
       orgTitle: {
@@ -299,6 +314,37 @@
           outline: none;
           box-shadow: 0 1px 0 0 #303030;
         }
+      }
+    }
+    .org-date{
+      display: flex;
+      margin-bottom: 12px;
+      
+      input:nth-child(1) {
+        min-width: 170px;
+      }
+      input {
+        transition: 0.5s ease-in-out all;
+        padding: 10px 4px;
+        border: none;
+        border-bottom: 1px solid #303030;
+  
+        &:focus {
+          outline: none;
+          box-shadow: 0 1px 0 0 #303030;
+        }
+      }
+    }
+    .org-inf{
+      display: flex;
+      margin-top: 5px;
+      margin-bottom: 22px;
+      margin-left: 30px;
+      padding: 2px;
+      h5{
+        font-size: 12px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight:100;
       }
     }
   

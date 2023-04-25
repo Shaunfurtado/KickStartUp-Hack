@@ -4,15 +4,17 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import db from "../firebase/firebaseInit";
 
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     campPosts: [],
     postLoaded: null,
-    campHTML: "Write your camp title here...",
+    campHTML: "Write your campaign details here...",
     campTitle: "",
     orgTitle: "",
+    endDate: "",
     campPhotoName: "",
     campPhotoFileURL: null,
     campPhotoPreview: null,
@@ -40,6 +42,9 @@ export default new Vuex.Store({
     updateCampTitle(state, payload) {
       state.campTitle = payload;
     },
+    updateEndDate(state, payload){
+      state.endDate = payload;
+    },
     updateOrgTitle(state, payload) {
       state.orgTitle = payload;
     },
@@ -57,6 +62,7 @@ export default new Vuex.Store({
     },
     setCampState(state, payload) {
       state.campTitle = payload.campTitle;
+      state.endDate = payload.endDate;
       state.orgTitle = payload.orgTitle;
       state.campHTML = payload.campHTML;
       state.campPhotoFileURL = payload.campCoverPhoto;
@@ -116,6 +122,7 @@ export default new Vuex.Store({
             campTitle: doc.data().campTitle,
             orgTitle: doc.data().orgTitle,  
             campDate: doc.data().date,
+            endDate: doc.data().endDate,
             campCoverPhotoName: doc.data().campCoverPhotoName,
           };
           state.campPosts.push(data);

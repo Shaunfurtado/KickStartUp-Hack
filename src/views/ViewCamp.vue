@@ -6,6 +6,7 @@
       <h4>Posted on: {{ new Date(this.currentCamp[0].campDate).toLocaleString("en-us", { dateStyle: "long" }) }}</h4>
       <img :src="this.currentCamp[0].campCoverPhoto" alt="" />
       <div class="post-content ql-editor" v-html="this.currentCamp[0].campHTML"></div>
+      <h6>Campaign Closes on: {{ this.currentCamp[0].endDate }}</h6>
     </div>
   </div>
 </template>
@@ -43,6 +44,12 @@ export default {
     font-weight: 400;
     font-size: 14px;
     margin-bottom: 24px;
+  }
+  h6 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom:24px;
+    margin-top: 50px;
   }
 }
 </style>

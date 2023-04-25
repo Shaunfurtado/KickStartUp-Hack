@@ -5,6 +5,7 @@
         <h3>{{ this.orgTitle }}</h3>
         <img :src="campCoverPhoto" alt="" />
         <div class="post-content ql-editor" v-html="campHTML"></div>
+        <h3>{{ this.endDate }}</h3>
       </div>
     </div>
   </template>
@@ -18,6 +19,9 @@
       },
       orgTitle() {
         return this.$store.state.orgTitle;
+      },
+      endDate(){
+        return this.$store.state.endDate;
       },
       campHTML() {
         return this.$store.state.campHTML;
