@@ -22,11 +22,11 @@
   </label>
   <label class="input-group">
     <span>Price (in Rs.) : </span>
-    <input type="text" placeholder=" Amount" class="input input-bordered" />
+    <input type="text" placeholder=" Amount" class="input input-bordered" v-model="campFund" />
   </label>
 </div>
     <div class="card-actions justify-end">
-      <button class="btn btn-primary">invest Now </button>
+      <button class="btn btn-primary" >Invest Now </button>
     </div>
   </div>
 </div>
@@ -122,7 +122,7 @@ export default {
       margin-bottom: 14px;
       font-size: 16px;
       font-weight: 500;
-      color: #000000;
+      color: #fffdfd;
     }
     .input-group {
       display: flexbox;
