@@ -18,6 +18,9 @@
           </div>
         </div>
         <div class="org-info">
+          <input type="text" placeholder="Enter Valuation" v-model="orgValue" />
+        </div>
+        <div class="org-info">
           <input type="text" placeholder="Enter Organization Name" v-model="orgTitle" />
         </div>
         <div class="org-date">
@@ -127,6 +130,8 @@
                   campCoverPhotoName: this.campCoverPhotoName,
                   campTitle: this.campTitle,
                   orgTitle: this.orgTitle,
+                  orgValue: this.orgValue,
+                  campFund: this.campFund,
                   campGoal: this.campGoal,
                   endDate: this.endDate,
                   profileId: this.profileId,
@@ -183,6 +188,22 @@
         },
         set(payload) {
           this.$store.commit("updateOrgTitle", payload);
+        },
+      },
+      orgValue: {
+        get() {
+          return this.$store.state.orgValue;
+        },
+        set(payload) {
+          this.$store.commit("updateOrgValue", payload);
+        },
+      },
+      campFund: {
+        get() {
+          return this.$store.state.campFund;
+        },
+        set(payload) {
+          this.$store.commit("updateCampFund", payload);
         },
       },
       campGoal: {

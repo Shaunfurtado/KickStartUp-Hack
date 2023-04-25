@@ -14,6 +14,7 @@ export default new Vuex.Store({
     campHTML: "Write your campaign details here...",
     campTitle: "",
     orgTitle: "",
+    orgValue: "",
     endDate: "",
     campFund: "",
     campGoal: "",
@@ -50,6 +51,9 @@ export default new Vuex.Store({
     updateOrgTitle(state, payload) {
       state.orgTitle = payload;
     },
+    updateOrgValue(state, payload) {
+      state.orgValue = payload;
+    },
     updateCampFund(state, payload) {
       state.campFund = payload;
     },
@@ -72,6 +76,7 @@ export default new Vuex.Store({
       state.campTitle = payload.campTitle;
       state.endDate = payload.endDate;
       state.orgTitle = payload.orgTitle;
+      state.orgValue = payload.orgValue;
       state.campFund = payload.campFund;
       state.campGoal = payload.campGoal;
       state.campHTML = payload.campHTML;
@@ -131,6 +136,7 @@ export default new Vuex.Store({
             campCoverPhoto: doc.data().campCoverPhoto,
             campTitle: doc.data().campTitle,
             orgTitle: doc.data().orgTitle, 
+            orgValue: doc.data().orgValue,
             campFund: doc.data().campFund,
             campGoal: doc.data().campGoal, 
             campDate: doc.data().date,

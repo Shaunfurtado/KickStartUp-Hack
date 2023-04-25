@@ -150,8 +150,10 @@
         .header {
           font-weight: 600;
           font-size: 24px;
-          color: #000;
-          text-decoration: none;
+          color: #d40505;
+          font-family: sans-serif;
+          text-decoration: dotted;
+          font-size: 35px;
         }
       }
   
@@ -161,12 +163,16 @@
         flex: 1;
         align-items: center;
         justify-content: flex-end;
+        list-style: none;
+        margin: 0;
+        padding: 0; 
   
         ul {
           margin-right: 32px;
   
           .link {
             margin-right: 32px;
+            font-weight: 700;
           }
   
           .link:last-child {

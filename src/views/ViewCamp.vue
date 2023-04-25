@@ -10,9 +10,9 @@
       <div class="card w-96 glass">
   <div class="card-body">
     <h2 class="card-title">{{ this.currentCamp[0].campTitle }}</h2>
-    <p>Valuation : Rs. </p>
+    <p>Valuation : Rs. {{ this.currentCamp[0].orgValue }}</p>
     //calculate the percentage of the goal Completed
-    <p>Goal : Rs.{{ this.currentCamp[0].campGoal }}</p>
+    <p>Fundraising Goal : Rs.{{ this.currentCamp[0].campGoal }}</p>
 
     <progress class="progress progress-success w-56" value="10" max="100"></progress>
     <p>Rs. {{ this.currentCamp[0].campFund }} of Rs. {{ this.currentCamp[0].campGoal }} Completed</p>
@@ -21,12 +21,12 @@
     <span class="label-text">Enter amount : </span>
   </label>
   <label class="input-group">
-    <span>Price (in Rs.) : </span>
+    <span>Price ( in Rs. ) : </span>
     <input type="text" placeholder=" Amount" class="input input-bordered" v-model="campFund" />
   </label>
 </div>
     <div class="card-actions justify-end">
-      <button class="btn btn-primary" >Invest Now </button>
+      <button class="btn btn-primary" @click="uploadCampFund">Invest Now</button>
     </div>
   </div>
 </div>
@@ -103,13 +103,13 @@ export default {
     }
     .card-title {
       font-size: 24px;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 8px;
       color: #ffffff;
     }
     p{
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 700;
       margin-bottom: 8px;
       color: #ffffff;
     }
