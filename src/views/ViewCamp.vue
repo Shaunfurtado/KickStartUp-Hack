@@ -57,6 +57,34 @@ export default {
     font-size: 20px;
     margin-bottom:18px;
     margin-top: 30px;
+    .camp-photo {
+    order: 1;
+    flex: 3;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+    @media (min-width: 700px) {
+      order: 2;
+    }
+    @media (min-width: 800px) {
+      flex: 4;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &:nth-child(even) {
+    .camp-content {
+      order: 2;
+    }
+    .camp-photo {
+      order: 1;
+    }
+  }
   }
 }
 </style>
