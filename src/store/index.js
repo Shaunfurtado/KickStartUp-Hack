@@ -15,6 +15,7 @@ export default new Vuex.Store({
     campTitle: "",
     orgTitle: "",
     endDate: "",
+    campGoal: "",
     campPhotoName: "",
     campPhotoFileURL: null,
     campPhotoPreview: null,
@@ -48,6 +49,9 @@ export default new Vuex.Store({
     updateOrgTitle(state, payload) {
       state.orgTitle = payload;
     },
+    updateCampGoal(state, payload) {
+      state.campGoal = payload;
+    },
     fileNameChange(state, payload) {
       state.campPhotoName = payload;
     },
@@ -64,6 +68,7 @@ export default new Vuex.Store({
       state.campTitle = payload.campTitle;
       state.endDate = payload.endDate;
       state.orgTitle = payload.orgTitle;
+      state.campGoal = payload.campGoal;
       state.campHTML = payload.campHTML;
       state.campPhotoFileURL = payload.campCoverPhoto;
       state.campPhotoName = payload.campCoverPhotoName;
@@ -120,7 +125,8 @@ export default new Vuex.Store({
             campHTML: doc.data().campHTML,
             campCoverPhoto: doc.data().campCoverPhoto,
             campTitle: doc.data().campTitle,
-            orgTitle: doc.data().orgTitle,  
+            orgTitle: doc.data().orgTitle, 
+            campGoal: doc.data().campGoal, 
             campDate: doc.data().date,
             endDate: doc.data().endDate,
             campCoverPhotoName: doc.data().campCoverPhotoName,

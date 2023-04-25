@@ -5,8 +5,10 @@
       <h4>by {{ this.currentCamp[0].orgTitle }}</h4>
       <h4>Posted on: {{ new Date(this.currentCamp[0].campDate).toLocaleString("en-us", { dateStyle: "long" }) }}</h4>
       <img :src="this.currentCamp[0].campCoverPhoto" alt="" />
-      <div class="post-content ql-editor" v-html="this.currentCamp[0].campHTML"></div>
+      <h6>Campaign Goal: Rs.{{ this.currentCamp[0].campGoal }}</h6>
       <h6>Campaign Closes on: {{ this.currentCamp[0].endDate }}</h6>
+      <h1>Description:</h1>
+      <div class="post-content ql-editor" v-html="this.currentCamp[0].campHTML"></div>
     </div>
   </div>
 </template>
@@ -29,6 +31,11 @@ export default {
 
 <style lang="scss">
 .post-view {
+  h1{
+    margin-bottom: 40px;
+    margin-top: auto;
+    font-weight: 800;
+  }
   h2{
       margin-bottom: 32px;
       font-weight: 500;
@@ -46,10 +53,10 @@ export default {
     margin-bottom: 24px;
   }
   h6 {
-    font-weight: 500;
+    font-weight: 900;
     font-size: 20px;
-    margin-bottom:24px;
-    margin-top: 50px;
+    margin-bottom:18px;
+    margin-top: 30px;
   }
 }
 </style>

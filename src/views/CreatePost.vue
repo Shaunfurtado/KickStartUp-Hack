@@ -26,6 +26,9 @@
         <div class="org-inf">
           <h5>( dd / mm / yyyy )</h5>
         </div>
+        <div class="camp-goal">
+          <input type="text" placeholder="Enter Campaign Goal: (Rs.) " v-model="campGoal" />
+        </div>
         <div class="editor">
           <vue-editor :editorOptions="editorSettings" v-model="campHTML" useCustomImageHandler @image-added="imageHandler" />
         </div>
@@ -124,6 +127,7 @@
                   campCoverPhotoName: this.campCoverPhotoName,
                   campTitle: this.campTitle,
                   orgTitle: this.orgTitle,
+                  campGoal: this.campGoal,
                   endDate: this.endDate,
                   profileId: this.profileId,
                   date: timestamp,
@@ -179,6 +183,14 @@
         },
         set(payload) {
           this.$store.commit("updateOrgTitle", payload);
+        },
+      },
+      campGoal: {
+        get() {
+          return this.$store.state.campGoal;
+        },
+        set(payload) {
+          this.$store.commit("updateCampGoal", payload);
         },
       },
       campHTML: {
@@ -260,7 +272,7 @@
       margin-bottom: 32px;
   
       input:nth-child(1) {
-        min-width: 170px;
+        min-width: 190px;
       }
   
       input {
@@ -302,7 +314,7 @@
       margin-bottom: 32px;
       
       input:nth-child(1) {
-        min-width: 170px;
+        min-width: 190px;
       }
       input {
         transition: 0.5s ease-in-out all;
@@ -321,7 +333,7 @@
       margin-bottom: 12px;
       
       input:nth-child(1) {
-        min-width: 170px;
+        min-width: 190px;
       }
       input {
         transition: 0.5s ease-in-out all;
@@ -338,13 +350,32 @@
     .org-inf{
       display: flex;
       margin-top: 5px;
-      margin-bottom: 22px;
-      margin-left: 30px;
+      margin-bottom: 20px;
+      margin-left: 20px;
       padding: 2px;
       h5{
         font-size: 12px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-weight:100;
+      }
+    }
+    .camp-goal{
+      display: flex;
+      margin-bottom: 28px;
+      
+      input:nth-child(1) {
+        min-width: 190px;
+      }
+      input {
+        transition: 0.5s ease-in-out all;
+        padding: 8px 4px;
+        border: none;
+        border-bottom: 1px solid #303030;
+  
+        &:focus {
+          outline: none;
+          box-shadow: 0 1px 0 0 #303030;
+        }
       }
     }
   

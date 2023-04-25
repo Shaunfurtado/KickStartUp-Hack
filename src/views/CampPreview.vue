@@ -20,6 +20,9 @@
       orgTitle() {
         return this.$store.state.orgTitle;
       },
+      campGoal() {
+        return this.$store.state.campGoal;
+      },
       endDate(){
         return this.$store.state.endDate;
       },
