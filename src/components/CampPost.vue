@@ -8,7 +8,7 @@
         <h4 v-else>by {{ post.orgTitle }}</h4>
         <p v-if="post.welcomeScreen">{{ post.campPost }}</p>
         <p class="content-preview" v-else v-html="post.campHTML"></p>
-        <router-link class="link link-light" v-if="post.welcomeScreen" to="#">
+        <router-link class="link link-light" v-if="post.welcomeScreen" to="Login">
           Login/Register<Arrow class="arrow arrow-light" />
         </router-link>
         <router-link class="link" v-else :to="{ name: 'ViewCamp', params: { campid: this.post.campID } }">

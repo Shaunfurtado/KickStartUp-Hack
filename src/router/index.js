@@ -87,7 +87,7 @@ const routes = [
     component: CreatePost,
     meta: {
       title: "Create Post",
-      // requiresAuth: true,
+      requiresAuth: true,
       // requiresAdmin: true,
     },
   },
