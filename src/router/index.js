@@ -107,7 +107,7 @@ const routes = [
     component: ViewCamp,
     meta: {
       title: "View Camp Post",
-      requiresAuth: false,
+      // requiresAuth: false,
     },
   },
   {
