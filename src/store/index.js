@@ -16,7 +16,6 @@ export default new Vuex.Store({
     campPhotoName: "",
     campPhotoFileURL: null,
     campPhotoPreview: null,
-    editPost: null,
     user: null,
     profileAdmin: null,
     profileEmail: null,
