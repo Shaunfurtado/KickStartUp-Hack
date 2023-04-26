@@ -1,6 +1,7 @@
 # KickStartUp
 
 ## Project setup
+##live demo: https://main--monumental-arithmetic-0c4361.netlify.app/
 
 ```
 npm install
