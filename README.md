@@ -16,7 +16,7 @@ Vue.js + Firebase + daisyui + quillEditor
 
 
 ## Project setup and Installation
-Live Demo: https://main--monumental-arithmetic-0c4361.netlify.app/
+Live Demo: [Link](https://main--monumental-arithmetic-0c4361.netlify.app/)
 
 ```
 npm install
